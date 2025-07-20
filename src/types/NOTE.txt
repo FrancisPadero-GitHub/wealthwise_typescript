@@ -1,0 +1,40 @@
+To Generate the types from the supabase database tables use this command 
+
+First you need the supabase CLI setup to your machine
+
+npm i supabase --save-dev
+npx supabase login
+
+[note note note note] 
+
+| Tool  | Purpose                                       |
+| ----- | --------------------------------------------- |
+| `npm` | Install and manage packages                   |
+| `npx` | Run CLI tools **without installing globally** |
+
+[note note note note] 
+
+This is the URL, or you can find this on your project settings
+https://mlnekbgliwrddsnsubyx.supabase.co
+
+Only include the key which is the "mlnekbgliwrddsnsubyx", do not include the https:// and .supabase.co
+
+RUN THIS ONE 
+
+npx supabase gen types typescript --project-id mlnekbgliwrddsnsubyx > src/types/database.types.ts
+
+"src/types/database.types.ts" is the location where the types are being generated
+
+
+
+OPTIONAL
+put this on your package.json under "scripts"
+
+"scripts" :{
+  "gen:types": "npx supabase gen types typescript --project-id mlnekbgliwrddsnsubyx > src/types/database.types.ts"
+}
+
+then run the command 
+
+npm run gen:types
+
