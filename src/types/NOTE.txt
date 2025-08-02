@@ -31,10 +31,11 @@ OPTIONAL
 put this on your package.json under "scripts"
 
 "scripts" :{
-  "gen:types": "npx supabase gen types typescript --project-id mlnekbgliwrddsnsubyx > src/types/database.types.ts"
+  "types": "npx supabase gen types typescript --project-id mlnekbgliwrddsnsubyx > src/types/database.types.ts"
 }
 
 then run the command 
 
-npm run gen:types
+npm run types
+
 
