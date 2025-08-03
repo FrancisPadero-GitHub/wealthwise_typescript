@@ -19,7 +19,7 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { supabase } from "../../../backend/supabase";
 
 export default function Login() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   // State with explicit types
   const [email, setEmail] = useState<string>("");
@@ -82,11 +82,11 @@ export default function Login() {
 
     setLoading(false);
 
-    // if (error) {
-    //   setErrorMsg(error.message);
-    // } else {
-    //   navigate("/");
-    // }
+    if (error) {
+      setErrorMsg(error.message);
+    } else {
+      navigate("/");
+    }
   }
 
   return (
@@ -197,14 +197,14 @@ export default function Login() {
         <Box mt={2} textAlign="center">
           <Typography variant="body2">
             Don&apos;t have an account?{" "}
-            {/* <Button
+            <Button
               component={Link}
               to="/register"
               size="small"
               sx={{ textTransform: "none", padding: 0 }}
             >
               Create an account ✨
-            </Button> */}
+            </Button>
           </Typography>
         </Box>
       </Card>

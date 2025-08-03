@@ -1,0 +1,7 @@
+#root,
+html {
+  min-width: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+}

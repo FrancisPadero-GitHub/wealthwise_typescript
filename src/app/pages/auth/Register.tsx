@@ -19,16 +19,16 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { supabase } from "../../../backend/supabase";
 
 // Import the Supabase types you generated
-import type { Database } from "../../../types/supabase_types"; // adjust path if different
+// import type { Database } from "../../../types/supabase_types"; // adjust path if different
 
 // Extract the profiles Row type for use if needed
 // For now wala pani gamit ang ge gamit sa profile kay full name instead of the split fname and lname
 // and ang authentication kay built in sa supabase dli pa specify or pull ang row sa types for it
 // so temporary lng ni for examples
-type ProfileRow = Database["public"]["Tables"]["profiles"]["Row"];
+// type ProfileRow = Database["public"]["Tables"]["profiles"]["Row"];
 
 export default function Register() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   // State with explicit types
   const [firstname, setFirstname] = useState<string>("");
@@ -184,13 +184,13 @@ export default function Register() {
     setLoading(false);
     setSuccessMsg("Account created successfully!");
 
-    // if (session) {
-    //   navigate("/");
-    // } else {
-    //   setTimeout(() => {
-    //     navigate("/login");
-    //   }, 2500);
-    // }
+    if (session) {
+      navigate("/");
+    } else {
+      setTimeout(() => {
+        navigate("/login");
+      }, 2500);
+    }
   };
 
   return (
@@ -365,17 +365,14 @@ export default function Register() {
         <Box mt={2} textAlign="center">
           <Typography variant="body2">
             Already have an account?{" "}
-             {/*
-              Wala pani kay need ug router dom sa pikas
-              
-             <Button
+            <Button
               component={Link}
               to="/login"
               size="small"
               sx={{ textTransform: "none", padding: 0 }}
             >
               Login 🔐
-            </Button> */}
+            </Button>
           </Typography>
         </Box>
       </Card>
